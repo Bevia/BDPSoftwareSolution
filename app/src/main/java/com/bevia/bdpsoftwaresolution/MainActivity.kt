@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         Log.d("DEBUG_INTENT", "onCreate")
-        val btnToTableSelection = findViewById<Button>(R.id.button_to_table_selection)
+        val btnToTableSelection = this.findViewById<Button>(R.id.button_to_table_selection)
                 btnToTableSelection.setOnClickListener {
             callNextActivity()
         }
