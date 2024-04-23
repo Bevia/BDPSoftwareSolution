@@ -31,14 +31,16 @@ class MainActivity : AppCompatActivity() {
         val intent = intent
         Log.d("DEBUG_INTENT", "intent $intent")
         // Check if the intent is null
-        //retrieve intent extra data including message.
+        // retrieve intent extra data including message.
         if (intent != null && intent.hasExtra("status")) {
-            val status = intent.getIntExtra("status", 0)
-            val message = intent.getStringExtra("message") ?: ""
+
+            //val status = intent.getIntExtra("status", 0)
+            //val message = intent.getStringExtra("message") ?: ""
 
             resultTextView.text = "Result intent via onCreate"
 
             //call the payment App here
+            callPaymentApp()
 
         }else{
             //TODO: run your default code here
@@ -58,8 +60,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun callNextActivity() {
-        val intent = Intent(this, TableSelection::class.java)
-        startActivity(intent)
+
+
+    }
+
+    private fun callPaymentApp() {
+
 
     }
 
@@ -69,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         resultTextView.text = "Result intent via onNewIntent"
 
         //call the payment App here
+        callPaymentApp()
     }
 
 
